@@ -15,8 +15,8 @@
 int main(void)
 {
 	DIO_enuInit();
-	u8 counter = 0;
-	u8 counter2 = 0;
+	s8 counter = 0;
+	s8 counter2 = 0;
 	u8 p;
 	u8 p2;
     /* Replace with your application code */
@@ -48,12 +48,12 @@ int main(void)
 		{
 			
 			counter--;
-			if(counter <= 0)
+			if(counter < 0)
 			{
 				
 				counter=9;
 				counter2--;
-				if(counter2 <= 0)
+				if(counter2 < 0)
 				{
 					counter2=9;
 				}
