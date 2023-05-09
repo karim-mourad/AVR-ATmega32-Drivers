@@ -11,7 +11,6 @@
 #include "../../LIB/Std_Types.h"
 #include "../../LIB/delay.h"
 
-
 int main(void)
 {
 	DIO_enuInit();

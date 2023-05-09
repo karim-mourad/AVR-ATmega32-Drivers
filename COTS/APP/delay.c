@@ -1,6 +1,6 @@
 #include "delay.h"
 #include "../LIB/Std_Types.h"
-#define F_CPU 16000000UL
+#define F_CPU 8000000UL
 #define amp 91.7
 
 Delay_tenuErrorStatus Delay_MS(u32 time){

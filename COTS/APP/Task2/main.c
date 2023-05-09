@@ -1,14 +1,15 @@
 /*
- * deif.c
+ * button_last.c
  *
- * Created: 19/01/2023 16:52:50
+ * Created: 27/01/2023 09:33:57
  * Author : HP
  */ 
 
-#include "../../MCAL/LIB"DIO.h"
+#include "../../MCAL/DIO/DIO.h"
 #include "../../HAL/LED/LED.h"
-#include "../../LIB/Std_Types.h"
+#include "../../HAL/BUTTON/button.h"
 #include "../../LIB/delay.h"
+#include "../../LIB/Std_types.h"
 
 
 int main(void)
@@ -16,23 +17,30 @@ int main(void)
 	DIO_enuInit();
 	u8 p1;
 	u8 p2;
-	u8 counter=2;
+	s8 counter=0;
     /* Replace with your application code */
     while (1) 
     {
-		SWITCH_IsPressed(0,&p1);
-		Delay_MS(120);
-		if (p1==1 && counter<6)
+		ButtonIsPressed(0,&p1);
+		ButtonIsPressed(1,&p2);
+		Delay_MS(200);
+		if(p1 == 0)
 		{
 			LED_ON(counter);
 			counter++;
+			if(counter > 2)
+			{
+				counter = 2;
+			}
 		}
-		SWITCH_IsPressed(1,&p2);
-		Delay_MS(120);
-		if (p2==1 && counter>0)
+		if(p2 == 0)
 		{
 			LED_OFF(counter);
 			counter--;
+			if(counter < 0)
+			{
+				counter = 0;
+			}
 		}
 		
     }

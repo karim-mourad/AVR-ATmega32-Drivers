@@ -22,7 +22,7 @@ BUTTON_enuErrorStatus ButtonIsPressed(BUTTON_tenuBUTTONS Cpy_enuPinNNumber,u8* A
 				
 				for(loc_iterator=0;loc_iterator<5;loc_iterator++)
 				{
-					loc_currentErrorStatus = DIO_enuGetPin(Cpy_enuPinNNumber,Add_Pu8pinValue);
+					loc_currentErrorStatus = DIO_enuGetPin(Button_strCfg[Cpy_enuPinNNumber].BUTTON_PIN,Add_Pu8pinValue);
 					Delay_MS(5);
 					if(*Add_Pu8pinValue==0)
 					{
@@ -44,7 +44,7 @@ BUTTON_enuErrorStatus ButtonIsPressed(BUTTON_tenuBUTTONS Cpy_enuPinNNumber,u8* A
 				
 				for(loc_iterator=0;loc_iterator<5;loc_iterator++)
 				{
-					loc_currentErrorStatus = DIO_enuGetPin(Cpy_enuPinNNumber,Add_Pu8pinValue);
+					loc_currentErrorStatus = DIO_enuGetPin(Button_strCfg[Cpy_enuPinNNumber].BUTTON_PIN,Add_Pu8pinValue);
 					Delay_MS(5);
 					if(*Add_Pu8pinValue==1)
 					{

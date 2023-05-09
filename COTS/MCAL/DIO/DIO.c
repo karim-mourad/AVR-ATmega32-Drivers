@@ -90,7 +90,7 @@ DIO_tenuErrorStatus DIO_enuInit(void)
 				}
 				else
 				{
-					CLR_BIT(DDRA,Loc_u8PinNumber);
+					CLR_BIT(DDRB,Loc_u8PinNumber);
 					if(DIO_strPinCfg[i].DIO_InputStatus == DIO_INPUT_PULL_UP)
 					{
 						SET_BIT(PORTB,Loc_u8PinNumber);
@@ -105,7 +105,7 @@ DIO_tenuErrorStatus DIO_enuInit(void)
 				}
 				else
 				{
-					CLR_BIT(DDRA,Loc_u8PinNumber);
+					CLR_BIT(DDRC,Loc_u8PinNumber);
 					if(DIO_strPinCfg[i].DIO_InputStatus == DIO_INPUT_PULL_UP)
 					{
 						SET_BIT(PORTC,Loc_u8PinNumber);
@@ -120,7 +120,7 @@ DIO_tenuErrorStatus DIO_enuInit(void)
 				}
 				else
 				{
-					CLR_BIT(DDRA,Loc_u8PinNumber);
+					CLR_BIT(DDRD,Loc_u8PinNumber);
 					if(DIO_strPinCfg[i].DIO_InputStatus == DIO_INPUT_PULL_UP)
 					{
 						SET_BIT(PORTD,Loc_u8PinNumber);
@@ -219,7 +219,7 @@ DIO_tenuErrorStatus DIO_enuGetPin(DIO_tenuPins Cpy_u8PinNumber, u8 *Add_Pu8pinVa
 	DIO_tenuErrorStatus currentErrorStatus = DIO_enuOK;
 	u8 loc_u8PortNo = Cpy_u8PinNumber/8;
 	u8 Loc_u8PinNumber = Cpy_u8PinNumber % 8;
-	if(loc_u8PortNo>PORT_D || Cpy_u8PinNumber>PIN_7)
+	if(loc_u8PortNo>PORT_D || Loc_u8PinNumber>PIN_7)
 	{
 		currentErrorStatus = DIO_enuNOK;
 	}

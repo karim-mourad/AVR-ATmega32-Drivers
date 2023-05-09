@@ -8,6 +8,10 @@
 #ifndef STD_TYPES_H_
 #define STD_TYPES_H_
 
+#define MY_ISR(ISR_NO)		CONC(ISR_NO)
+#define CONC(ISR_NO) void __vector_##ISR_NO(void) __attribute__((signal));\
+						void __vector_##ISR_NO(void)
+
 typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned long  int u32;
